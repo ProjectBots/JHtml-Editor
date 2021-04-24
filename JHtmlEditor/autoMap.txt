@@ -1,0 +1,19 @@
+<p></p> 3
+<font color=></font> 12
+<ul>\n<li></li>\n</ul> 9
+<li></li> 4
+<h1></h1> 4
+<h2></h2> 4
+<h3></h3> 4
+<h4></h4> 4
+<h5></h5> 4
+<h6></h6> 4
+<b></b> 3
+<i></i> 3
+<u></u> 3
+<br> 4
+<hr> 4
+<img src=""> 10
+<img src="" width="" height=""> 10
+<center></center> 8
+<textarea rows="" cols=""></textarea> 16
