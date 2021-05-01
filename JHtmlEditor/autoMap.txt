@@ -17,3 +17,7 @@
 <img src="" width="" height=""> 10
 <center></center> 8
 <textarea rows="" cols=""></textarea> 16
+<html></html> 6
+<table><tr>\n<th></th>\n</tr></table> 16
+<tr>\n<th></th>\n</tr> 9
+<th></th> 4

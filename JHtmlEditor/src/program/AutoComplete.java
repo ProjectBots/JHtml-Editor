@@ -29,14 +29,14 @@ public class AutoComplete {
 			return insert;
 		}
 		
-		public boolean matches(String in) {
+		public int matches(String in) {
 			for(int i=match.length(); i>=0; i--) {
 				if(in.endsWith(match.substring(0, i))) {
 					insert = match.substring(i);
-					return true;
+					return i;
 				}
 			}
-			return false;
+			return -1;
 		}
 		
 		public void reset() {
@@ -73,15 +73,22 @@ public class AutoComplete {
 		
 		String match = sb.substring(0, pos);
 		AutoComplete.pos = pos;
+		int bm = -1;
+		String ins = null;
 		for(Key key : keys) {
 			if(banned.contains(key.getId())) continue;
-			if(key.matches(match)) {
-				sb.insert(pos, key.getInsert());
+			int m = key.matches(match);
+			if(m > bm) {
+				bm = m;
+				ins = key.getInsert();
 				AutoComplete.pos = pos + key.getOffset();
 				id = key.getId();
-				key.reset();
-				break;
 			}
+			key.reset();
+		}
+		
+		if(ins != null) {
+			sb.insert(pos, ins);
 		}
 		
 		return sb.toString();

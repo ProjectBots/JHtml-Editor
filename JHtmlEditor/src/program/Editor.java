@@ -4,6 +4,8 @@ import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.Insets;
 import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -109,7 +111,11 @@ public class Editor {
 					}
 				} else if(e.getKeyCode() == KeyEvent.VK_V) {
 					saveSSB();
+				} else if(e.getKeyCode() == KeyEvent.VK_T) {
+					Toolkit.getDefaultToolkit().getSystemClipboard()
+						.setContents(new StringSelection(GUI.getInputText("editor").replace("\n", "")), null);
 				}
+				
 			}
 		};
 		
